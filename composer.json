@@ -1,0 +1,42 @@
+{
+    "name": "wonsong82/webpack",
+    "description": "Webpack Boilerplate",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "won song",
+            "email": "wonsong82@gmail.com"
+        }
+    ],
+    "require": {
+        "laravel/framework": "5.6.*"
+    },
+    "require-dev": {
+    },
+    "autoload": {
+        "psr-4": {
+            "Won\\Webpack\\": "src"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Won\\Webpack\\Test\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Won\\Webpack\\WebpackServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev"
+
+
+}
