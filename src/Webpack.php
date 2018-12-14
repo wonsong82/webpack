@@ -11,9 +11,10 @@ class Webpack {
             $url = self::getDistUrl() . $filename;
             if(env('NODE_ENV') == 'production'){
                 $url .= '?v=' . self::getBuildVersion();
+				return "<link rel=\"stylesheet\" type=\"text/css\" href=\"{$url}\">";                
 			}
-			
-			return "<link rel=\"stylesheet\" type=\"text/css\" href=\"{$url}\">";                
+			else
+				return ''; // css loaded within js
 		}
 		
         elseif(preg_match('/\.js$/', $filename)){
