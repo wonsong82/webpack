@@ -11,12 +11,11 @@ class Webpack {
             $url = self::getDistUrl() . $filename;
             if(env('NODE_ENV') == 'production'){
                 $url .= '?v=' . self::getBuildVersion();
-                return "<link rel=\"stylesheet\" type=\"text/css\" href=\"{$url}\">";
-            }
-            else {
-                return '';
-            }
-        }
+			}
+			
+			return "<link rel=\"stylesheet\" type=\"text/css\" href=\"{$url}\">";                
+		}
+		
         elseif(preg_match('/\.js$/', $filename)){
             $url = self::getDistUrl() . $filename;
             if(env('NODE_ENV') == 'production'){
@@ -25,6 +24,7 @@ class Webpack {
 
             return "<script src=\"{$url}\"></script>";
         }
+		
         else {
             return '';
         }
